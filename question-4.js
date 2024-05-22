@@ -8,11 +8,16 @@ const inventory = [
 
 const findLowestStock = ((inven) => {
   let initialNum = inven[0]["quantity"]; 
+  let currentFruit = null;
+  
   for (let list of inven){
     if (list["quantity"] < initialNum){
-      return initialNum = list
+      initialNum = list["quantity"]
+      currentFruit = list
     }
   }
+  
+  return currentFruit
 })
   
 console.log(`สินค้าที่มีจำนวนต่ำที่สุดในคลังสินค้าคือ ${findLowestStock(inventory)["name"]} ซึ่งมี ${findLowestStock(inventory)["quantity"]} ชิ้น` )
