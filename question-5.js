@@ -25,12 +25,13 @@ function calculateTotalPrice(product, promotionCode){
 
   let allProductPrice = []
   for (let item of product){
-    allProductPrice.push(item["price"] * item["quantity"]) }
+    allProductPrice.push(item["price"] * item["quantity"]) 
+  }
   
-  let totalNumber = 0;
-  allProductPrice.reduce((acc, current) => {
-    totalNumber += (acc, current)},0)
-
+  let totalNumber = allProductPrice.reduce((acc, current) => {
+    return acc + current
+  },0)
+  
     if (promotionCode === "SALE20" ){
       totalNumber -= totalNumber * ( 1 / 5)
     } else if (promotionCode === "SALE50"){

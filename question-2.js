@@ -14,11 +14,10 @@ const calculateStockValue = ((array) => {
       fruitValue.push(eachFruit["price"] * eachFruit["quantity"])   
   }
   
-  let result = 0;
-  for (let number of fruitValue){
-    result += number
-  }
-
+  let result = fruitValue.reduce((acc, cur) => {
+    return acc + cur
+  })
+  
   return result
 })
 
