@@ -22,4 +22,4 @@ const calculateStockValue = ((array) => {
 })
 
 
-console.log(calculateStockValue(inventory));
+console.log(`มูลค่ารวมของจำนวนสินค้าทั้งหมดในสต็อก ${calculateStockValue(inventory)} บาท`);
